@@ -5,7 +5,6 @@ import timeago from 'lib/timeago'
 import NewComment from 'components/NewComment'
 import { useSession } from 'next-auth/react'
 
-
 export default function Post({ subreddit, post }) {
     const { data: session, status } = useSession()
 
