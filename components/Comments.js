@@ -33,9 +33,16 @@ export default function Comments({ comments, post }) {
 
     return (
         <>
-            {comments.map((comment, index) => (
-                <Comment key={index} comment={comment} post={post} />
-            ))}
+          {comments.map((comment, index) => (
+            <div key={index}>
+              <Comment comment={comment} post={post} />
+              {comment.comments && (
+                <div className='pl-10'>
+                  <Comments comments={comment.comments} post={post} />
+                </div>
+              )}
+            </div>
+          ))}
         </>
-    )
-}
+      )
+    }
