@@ -11,7 +11,7 @@
 
   "engines": {
     "node": "18.x",
-    "npm": ">=6.0.0."
+    "npm": ">=8.0.0."
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.5",
