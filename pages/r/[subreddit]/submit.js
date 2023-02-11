@@ -7,15 +7,15 @@ import { useSession } from 'next-auth/react'
 
 
 export default function NewPost({ subreddit }) {
-    const { data: session, status } = useSession()
-    const loading = status === 'loading'
-  
-    if (loading) {
-      return null
-    }
-  
-    if (!session) return <p className='text-center p-5'>Not logged in 😞</p>
-    
+  const { data: session, status } = useSession()
+  const loading = status === 'loading'
+
+  if (loading) {
+    return null
+  }
+
+  if (!session) return <p className='text-center p-5'>Not logged in 😞</p>
+
   const router = useRouter()
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
@@ -29,13 +29,19 @@ export default function NewPost({ subreddit }) {
         <Link href={`/`}>
           <a className='underline'>Home</a>
         </Link>
+
         <p className='grow'></p>
+
       </header>
+
       <header className='bg-black text-white h-12 flex pt-3 px-5 pb-2'>
+
         <Link href={`/r/${subreddit.name}`}>
           <a className='text-center underline'>/r/{subreddit.name}</a>
         </Link>
+
         <p className='ml-4 text-left grow'>{subreddit.description}</p>
+
       </header>
 
       <div className='flex flex-row mb-4  px-10 justify-center'>
